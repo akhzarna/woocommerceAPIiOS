@@ -1,0 +1,149 @@
+{
+    "_links" =     {
+        collection =         (
+                              {
+                              href = "http://www.rahatayaz.me/spotless/wp-json/wc/v2/orders";
+                              }
+                              );
+        customer =         (
+                            {
+                            href = "http://www.rahatayaz.me/spotless/wp-json/wc/v2/customers/5";
+                            }
+                            );
+        self =         (
+                        {
+                        href = "http://www.rahatayaz.me/spotless/wp-json/wc/v2/orders/775";
+                        }
+                        );
+    };
+    billing =     {
+        "address_1" = "";
+        "address_2" = "";
+        city = "";
+        company = "";
+        country = "";
+        email = "usmaisp555@gmail.com";
+        "first_name" = "";
+        "last_name" = "";
+        phone = "";
+        postcode = "";
+        state = "";
+    };
+    "cart_hash" = "";
+    "cart_tax" = "0.00";
+    "coupon_lines" =     (
+    );
+    "created_via" = "rest-api";
+    currency = AED;
+    "customer_id" = 5;
+    "customer_ip_address" = "";
+    "customer_note" = "";
+    "customer_user_agent" = "";
+    "date_completed" = "<null>";
+    "date_completed_gmt" = "<null>";
+    "date_created" = "2017-07-14T06:19:00";
+    "date_created_gmt" = "2017-07-14T06:19:00";
+    "date_modified" = "2017-07-14T06:19:00";
+    "date_modified_gmt" = "2017-07-14T06:19:00";
+    "date_paid" = "<null>";
+    "date_paid_gmt" = "<null>";
+    "discount_tax" = "0.00";
+    "discount_total" = "0.00";
+    "fee_lines" =     (
+    );
+    id = 775;
+    "line_items" =     (
+    );
+    "meta_data" =     (
+    );
+    number = 775;
+    "order_key" = "wc_order_5968625440d98";
+    "parent_id" = 0;
+    "payment_method" = paypal13;
+    "payment_method_title" = "Usman Payment Method";
+    "prices_include_tax" = 0;
+    refunds =     (
+    );
+    shipping =     {
+        "address_1" = "";
+        "address_2" = "";
+        city = "";
+        company = "";
+        country = "";
+        "first_name" = "";
+        "last_name" = "";
+        postcode = "";
+        state = "";
+    };
+    "shipping_lines" =     (
+    );
+    "shipping_tax" = "0.00";
+    "shipping_total" = "0.00";
+    status = pending;
+    "tax_lines" =     (
+    );
+    total = "0.00";
+    "total_tax" = "0.00";
+    "transaction_id" = "";
+    version = "3.0.9";
+}
+
+
+
+
+
+
+
+
+
+<?php
+$data = [
+         'payment_method' => 'bacs',
+         'payment_method_title' => 'Direct Bank Transfer',
+         'set_paid' => true,
+         'billing' => [
+                       'first_name' => 'John',
+                       'last_name' => 'Doe',
+                       'address_1' => '969 Market',
+                       'address_2' => '',
+                       'city' => 'San Francisco',
+                       'state' => 'CA',
+                       'postcode' => '94103',
+                       'country' => 'US',
+                       'email' => 'john.doe@example.com',
+                       'phone' => '(555) 555-5555'
+                       ],
+         'shipping' => [
+                        'first_name' => 'John',
+                        'last_name' => 'Doe',
+                        'address_1' => '969 Market',
+                        'address_2' => '',
+                        'city' => 'San Francisco',
+                        'state' => 'CA',
+                        'postcode' => '94103',
+                        'country' => 'US'
+                        ],
+         'line_items' => [
+                          [
+                           'product_id' => 93,
+                           'quantity' => 2
+                           ],
+                          [
+                           'product_id' => 22,
+                           'variation_id' => 23,
+                           'quantity' => 1
+                           ]
+                          ],
+         'shipping_lines' => [
+                              [
+                               'method_id' => 'flat_rate',
+                               'method_title' => 'Flat Rate',
+                               'total' => 10
+                               ]
+                              ]
+         ];
+
+print_r($woocommerce->post('orders', $data));
+?>
+
+
